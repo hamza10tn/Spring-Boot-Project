@@ -5,8 +5,7 @@ package tn.esprit.springproject.controllers;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.springproject.entites.Etudiant;
-import tn.esprit.springproject.repository.EtudiantRepository;
-import tn.esprit.springproject.services.EtudiantService;
+import tn.esprit.springproject.services.EtudiantServiceImp;
 
 import java.util.List;
 
@@ -16,10 +15,10 @@ import java.util.List;
 @RequestMapping("/api/v1")
     public class FirstController {
 
-    private EtudiantService etudiantService;
+    private EtudiantServiceImp etudiantService;
 
 
-        @GetMapping("/etudiant")
+      /*  @GetMapping("/etudiant")
         public List<Etudiant> getStudent() {
             return etudiantService.getEtudiant();
         }
@@ -33,6 +32,6 @@ import java.util.List;
         etudiantService.deleteStudent(id);
     }
 
-
+*/
 
 }

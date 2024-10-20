@@ -24,6 +24,8 @@ public class Etudiant {
     private long cin;
 
     private String ecole;
+    //on ajoute @Temporal pour spécifier le type de date
+    @Temporal(TemporalType.DATE)
     private Date dateNaissance;
 
     @ManyToMany(mappedBy = "etudiants")
