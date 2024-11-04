@@ -1,5 +1,6 @@
 package tn.esprit.springproject.entites;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,7 @@ public class Bloc {
     private Set<Chambre> chambres;
 
 @ManyToOne
+@JsonIgnore
     private Foyer foyer;
 
 }

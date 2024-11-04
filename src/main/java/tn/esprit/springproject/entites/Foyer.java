@@ -1,6 +1,7 @@
 package tn.esprit.springproject.entites;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,10 +24,12 @@ public class Foyer implements Serializable {
     private String nomF;
     private long capaciteF;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "foyer" ,cascade = CascadeType.ALL)
     //@JoinColumn() to name the foreign key
     private Universite universite;
-@OneToMany(mappedBy = "foyer")
+    @JsonIgnore
+    @OneToMany(mappedBy = "foyer", cascade = CascadeType.ALL)
     private Set<Bloc> blocs;
 
 

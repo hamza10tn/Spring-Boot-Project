@@ -1,6 +1,7 @@
 package tn.esprit.springproject.entites;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,13 +22,15 @@ public class Chambre implements Serializable {
     private long idC;
     private long numC;
    @Enumerated(EnumType.STRING)
-    private TypeChambre TypeC;
+   //bonne pratique les noms les noms des attribut en miniscules 'typec')
+    private TypeChambre typeC;
 
     @OneToMany(mappedBy="chambre")
     private Set<Reservation> reservations;
 
 
     @ManyToOne
+    @JsonIgnore
     private Bloc bloc;
 
 }

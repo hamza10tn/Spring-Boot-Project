@@ -39,9 +39,15 @@ public class UniversiteRestController {
         universiteService.deleteUniversiteById(id);
     }
 
-    @PostMapping("/affecteruf/{idf}/{idu}")
+        @PostMapping("/affecteruf/{idf}/{idu}")
     public Universite affecterUF(@PathVariable long idf,@PathVariable long idu){
         return universiteService.affecterFoyerAUniversite(idf,idu);
+    }
+
+
+    @PostMapping("/desaffecteruf/{idu}")
+    public Universite desaffecterFoyerFromUniverstite(@PathVariable int idu) {
+    return universiteService.desaffecterFoyerFromUniverstite(idu);
     }
 
 }

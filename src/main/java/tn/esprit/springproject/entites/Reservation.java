@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Set;
 
@@ -20,6 +21,9 @@ public class Reservation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String idReservation;
     private Date anneeUniversitaire;
+
+    private LocalDate dataDebut;
+    private LocalDate dataFin;
     private boolean estValide;
     @ManyToOne
     Bloc Bloc;

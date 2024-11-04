@@ -41,4 +41,18 @@ public class FoyerRestController {
     public void deleteFoyer(@PathVariable Long id) {
         foyerService.deleteFoyer(id);
     }
+
+    @PostMapping("/addFoyerAndAsseignToUniversity/{idu}")
+    public Foyer addFoyerAndAsseignToUniversity(@RequestBody Foyer foyer,@PathVariable long idu) {
+        return foyerService.addFoyerAndAsseignToUniversity(foyer, idu);
+    }
+
+    @GetMapping("/getfoyerbyname/{nom}")
+    public Foyer getFoyerByNom(@PathVariable String nom){
+        return foyerService.getFoyerByNom(nom);
+    }
+    @GetMapping("/getfoyerbycapacite/{a}/{b}")
+    public Foyer getFoyerByCapacite(@PathVariable Long a,@PathVariable Long b){
+        return foyerService.getFoyerByCapacite(a,b);
+    }
 }

@@ -29,16 +29,16 @@ public class EtudiantServiceImp implements IEtudientService{
 
     @Override
     public Etudiant updateEtudient(Etudiant etudiant) {
-        return null;
+        return etudiantRepository.save(etudiant);
     }
 
     @Override
     public Etudiant retrieveEtudientById(long id) {
-        return null;
+        return etudiantRepository.findById(id).orElse(null);
     }
 
     @Override
     public List<Etudiant> retrieveAllEtudients() {
-        return null;
+        return etudiantRepository.findAll();
     }
 }
