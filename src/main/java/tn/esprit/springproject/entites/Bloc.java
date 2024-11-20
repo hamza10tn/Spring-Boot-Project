@@ -21,6 +21,7 @@ public class Bloc {
     private String nomBloc;
     private long capaciteBloc;
 
+    @ToString.Exclude
     @OneToMany(mappedBy="bloc")
     private Set<Chambre> chambres;
 

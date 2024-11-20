@@ -31,6 +31,7 @@ public class Chambre implements Serializable {
 
     @ManyToOne
     @JsonIgnore
+    @ToString.Exclude
     private Bloc bloc;
 
 }

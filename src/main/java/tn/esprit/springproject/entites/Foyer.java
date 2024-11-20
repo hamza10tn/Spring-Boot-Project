@@ -29,6 +29,7 @@ public class Foyer implements Serializable {
     //@JoinColumn() to name the foreign key
     private Universite universite;
     @JsonIgnore
+    @ToString.Exclude
     @OneToMany(mappedBy = "foyer", cascade = CascadeType.ALL)
     private Set<Bloc> blocs;
 

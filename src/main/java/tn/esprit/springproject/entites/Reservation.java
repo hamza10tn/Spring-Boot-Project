@@ -19,14 +19,14 @@ import java.util.Set;
 public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String idReservation;
+    private Long  idReservation;
     private Date anneeUniversitaire;
 
     private LocalDate dataDebut;
     private LocalDate dataFin;
     private boolean estValide;
     @ManyToOne
-    Bloc Bloc;
+    private Bloc bloc;
 
     @ManyToOne
     Chambre chambre;

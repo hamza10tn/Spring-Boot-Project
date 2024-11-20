@@ -12,4 +12,5 @@ public interface IReservationService {
     public Reservation retreiveReservationById(long idE);
     public void deleteReservationById(long idE);
     public long getReservationParAnneeUniversitaire( LocalDate debutAnnee, LocalDate finAnnee ) ;
+    public void mettreAJourEtAfficherReservations();
 }
