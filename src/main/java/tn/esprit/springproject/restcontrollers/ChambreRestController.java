@@ -1,5 +1,7 @@
 package tn.esprit.springproject.restcontrollers;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.springproject.entites.Bloc;
@@ -12,15 +14,19 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/chambre")
+@Tag(name = "Gestion Chambre")
 public class ChambreRestController {
     IChambreService chambreService;
     // http://localhost:8089/tpfoyer/chambre/retrieve-all-chambres
+    @Operation(description = "ws = récupérer toutes les chambres de la base de données")
     @GetMapping("/retrieve-all-chambres")
+    @CrossOrigin(origins = "http://localhost:4200") // Allow requests from Angular
     public List<Chambre> getChambres() {
         List<Chambre> listChambres = chambreService.getAllChambres();
         return listChambres;
     }
     // http://localhost:8089/tpfoyer/chambre/retrieve-chambre/8
+
     @GetMapping("/retrieve-chambre/{chambre-id}")
     public Chambre retrieveChambre(@PathVariable("chambre-id") Long chId) {
         Chambre chambre = chambreService.retreiveChambreById(chId);

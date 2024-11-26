@@ -25,8 +25,8 @@ public class Bloc {
     @OneToMany(mappedBy="bloc")
     private Set<Chambre> chambres;
 
-@ManyToOne
-@JsonIgnore
+    @JsonIgnore
+    @ManyToOne
     private Foyer foyer;
 
 }
